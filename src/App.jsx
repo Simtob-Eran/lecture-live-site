@@ -10,16 +10,38 @@ import {
   BookOpen,
   Users,
   Smartphone,
+  Search,
+  PencilLine,
+  CheckCircle2,
 } from 'lucide-react'
 import { BRAND, SLOGAN, WHATSAPP_NUMBER, stats, faqs } from './data.js'
 import Reveal from './components/Reveal.jsx'
 import HeroBoard from './components/HeroBoard.jsx'
+import PlayBoard from './components/PlayBoard.jsx'
 
 const waLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
   `היי ${BRAND}! אשמח לקבל חידה ראשונה ולשמוע עוד על הקורסים והליגה.`,
 )}`
 
 const YEAR = new Date().getFullYear()
+
+const steps = [
+  {
+    icon: Search,
+    title: 'סורקים',
+    text: 'מחפשים שורה, עמודה או ריבוע שכמעט מלאים. שם מסתתרת הספרה הראשונה.',
+  },
+  {
+    icon: PencilLine,
+    title: 'ממלאים רק מה שבטוח',
+    text: 'אם יש יותר מאפשרות אחת, עוברים הלאה. ניחושים הם הדרך הכי מהירה להסתבך.',
+  },
+  {
+    icon: CheckCircle2,
+    title: 'ממשיכים עד הסוף',
+    text: 'כל ספרה שמילאתם פותחת ספרה נוספת. כשהלוח מתמלא נכון, המסגרת תהפוך ירוקה.',
+  },
+]
 
 const benefits = [
   {
@@ -91,6 +113,7 @@ export default function App() {
           </a>
           <div className="hidden gap-8 text-sm font-medium text-ink-200 md:flex">
             <a href="#about" className="transition hover:text-white">על סודוקו</a>
+            <a href="#play" className="transition hover:text-white">נסו עכשיו</a>
             <a href="#benefits" className="transition hover:text-white">מה מקבלים</a>
             <a href="#facts" className="transition hover:text-white">מספרים</a>
             <a href="#faq" className="transition hover:text-white">שאלות</a>
@@ -174,6 +197,38 @@ export default function App() {
                 loading="lazy"
                 className="aspect-[4/5] w-full rounded-3xl object-cover shadow-2xl md:aspect-[3/4]"
               />
+            </Reveal>
+          </div>
+        </section>
+
+
+        {/* How + Play */}
+        <section id="play" className="scroll-mt-20 bg-ink-900/60 py-20">
+          <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 lg:grid-cols-2">
+            <Reveal>
+              <h2 className="text-3xl font-black md:text-4xl">נסו עכשיו. בלי הרשמה, בלי הורדה.</h2>
+              <p className="mt-4 text-lg text-ink-200">
+                לוח ברמה בינונית, ישר מהמחולל שלנו. לחצו על משבצת, בחרו ספרה, ותנו להיגיון לעבוד.
+              </p>
+              <ol className="mt-8 space-y-5">
+                {steps.map(({ icon: Icon, title, text }, i) => (
+                  <li key={title} className="flex gap-4">
+                    <div className="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-sun-500/10 text-sun-400">
+                      <Icon className="size-6" />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold">
+                        <span className="me-2 text-sun-400">{i + 1}.</span>
+                        {title}
+                      </h3>
+                      <p className="mt-1 text-ink-200">{text}</p>
+                    </div>
+                  </li>
+                ))}
+              </ol>
+            </Reveal>
+            <Reveal delay={150}>
+              <PlayBoard />
             </Reveal>
           </div>
         </section>
