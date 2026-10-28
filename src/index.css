@@ -2,8 +2,25 @@
 
 @theme {
   --font-sans: "Heebo", system-ui, sans-serif;
+  --color-ink-950: #0b1020;
+  --color-ink-900: #121a33;
+  --color-ink-800: #1b254a;
+  --color-ink-700: #2a3663;
+  --color-ink-200: #c7cfe6;
+  --color-ink-100: #e6eaf6;
+  --color-sun-500: #f5b400;
+  --color-sun-400: #ffc933;
+  --color-sun-300: #ffd966;
 }
 
 html {
   direction: rtl;
+  scroll-behavior: smooth;
+}
+
+.grid-bg {
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px);
+  background-size: 48px 48px;
 }
