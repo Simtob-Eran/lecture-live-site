@@ -266,7 +266,7 @@ export default function App() {
               עובדות אמיתיות מהמחקר והמתמטיקה שמאחורי 81 המשבצות.
             </p>
           </Reveal>
-          <div className="mt-12 grid gap-6 sm:grid-cols-2">
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {stats.map(({ value, label, note }, i) => (
               <Reveal key={label} delay={i * 100}>
                 <div className="h-full rounded-3xl border border-white/10 bg-gradient-to-br from-ink-900 to-ink-950 p-8">
@@ -322,6 +322,16 @@ export default function App() {
           </Reveal>
         </section>
       </main>
+
+      <a
+        href={waLink}
+        target="_blank"
+        rel="noreferrer"
+        aria-label="פתיחת שיחה בוואטסאפ"
+        className="fixed bottom-5 start-5 z-50 flex size-14 items-center justify-center rounded-full bg-emerald-500 text-ink-950 shadow-lg shadow-emerald-500/30 transition hover:scale-105 hover:bg-emerald-400 md:hidden"
+      >
+        <MessageCircle className="size-7" />
+      </a>
 
       <footer className="border-t border-white/10 py-10">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-5 text-sm text-ink-200 md:flex-row">
