@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Heebo", system-ui, sans-serif;
+}
+
+html {
+  direction: rtl;
+}
