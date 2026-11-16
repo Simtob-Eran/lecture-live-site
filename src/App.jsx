@@ -71,7 +71,7 @@ const benefits = [
   },
   {
     icon: Smartphone,
-    title: 'בכל מקום, בלי אינטרנט',
+    title: 'בכל מקום, בל�� אינטרנט',
     text: 'הורידו חבילת חידות מראש ופתרו ברכבת, בטיסה או בחוף. ההתקדמות נשמרת.',
   },
 ]
@@ -192,15 +192,14 @@ export default function App() {
             </Reveal>
             <Reveal delay={150} className="order-first md:order-none">
               <img
-                src="https://images.unsplash.com/photo-1586030301401-54386553db94?w=900&q=75&auto=format&fit=crop"
-                alt="חוברת חידות יפנית ועיפרון על אדן חלון"
+                src="/Sunny%20Sudoku%20and%20Coffee%20Workspace.png"
+                alt="סודוקו על שולחן עבודה עם קפה"
                 loading="lazy"
                 className="aspect-[4/5] w-full rounded-3xl object-cover shadow-2xl md:aspect-[3/4]"
               />
             </Reveal>
           </div>
         </section>
-
 
         {/* How + Play */}
         <section id="play" className="scroll-mt-20 bg-ink-900/60 py-20">
@@ -245,7 +244,7 @@ export default function App() {
             <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {benefits.map(({ icon: Icon, title, text }, i) => (
                 <Reveal key={title} delay={i * 80}>
-                  <article className="group h-full rounded-3xl border border-white/10 bg-ink-950 p-8 transition duration-300 hover:-translate-y-1 hover:border-sun-500/40 hover:shadow-xl hover:shadow-sun-500/5">
+                  <article className="group h-full rounded-3xl border border-white/10 bg-ink-950 p-8 transition duration-300 hover:-translate-y-1 hover:border-sun-500/40 hover:shadow-xl hover:shadow-sun-500/10">
                     <div className="inline-flex rounded-2xl bg-sun-500/10 p-3 transition group-hover:bg-sun-500/20">
                       <Icon className="size-8 text-sun-400" />
                     </div>
@@ -328,7 +327,7 @@ export default function App() {
         target="_blank"
         rel="noreferrer"
         aria-label="פתיחת שיחה בוואטסאפ"
-        className="fixed bottom-5 start-5 z-50 flex size-14 items-center justify-center rounded-full bg-emerald-500 text-ink-950 shadow-lg shadow-emerald-500/30 transition hover:scale-105 hover:bg-emerald-400 md:hidden"
+        className="fixed bottom-5 start-5 z-50 flex size-14 items-center justify-center rounded-full bg-emerald-500 text-ink-950 shadow-lg shadow-emerald-500/30 transition hover:scale-105 hover:bg-emerald-400"
       >
         <MessageCircle className="size-7" />
       </a>
