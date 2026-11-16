@@ -35,112 +35,71 @@ html {
   animation: cell-pop 0.45s ease-out forwards;
 }
 
-/* Full-bleed, uncropped Sudoku photo with the story over its open left side. */
-#about {
-  position: relative;
-  width: 100%;
-  max-width: none;
-  overflow: hidden;
-  padding: 0;
-  margin-inline: 0;
-  background: #f7f1e7;
-  color: #171717;
+/* The original /old page: restore the text-only About section. */
+body.legacy-route #about {
+  position: static;
+  width: auto;
+  max-width: 72rem;
+  overflow: visible;
+  margin-inline: auto;
+  padding: 5rem 1.25rem;
+  background: transparent;
+  color: #e6eaf6;
 }
 
-#about > div {
-  position: relative;
-  display: block;
-  width: 100%;
+body.legacy-route #about > div {
+  position: static;
+  display: grid;
+  width: auto;
   max-width: none;
-  aspect-ratio: 1672 / 941;
   min-height: 0;
+  aspect-ratio: auto;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: center;
+  gap: 3rem;
   padding: 0;
-  background-image: url("/Sunny%20Sudoku%20and%20Coffee%20Workspace.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100% 100%;
+  background: none;
 }
 
-#about > div > :first-child {
-  position: absolute;
-  z-index: 1;
-  inset-block: 0;
-  left: 4vw;
-  display: flex;
-  width: min(44vw, 650px);
-  flex-direction: column;
-  justify-content: center;
-  text-align: right;
-  color: #171717;
+body.legacy-route #about > div > :first-child {
+  position: static;
+  display: block;
+  width: auto;
+  padding: 0;
+  color: #e6eaf6;
+  text-align: start;
+  background: transparent;
 }
 
-#about h2,
-#about p {
-  color: #171717;
+body.legacy-route #about h2 {
+  color: #e6eaf6;
 }
 
-#about h3 {
-  color: #6a4700;
+body.legacy-route #about p {
+  color: #c7cfe6;
 }
 
-#about > div > :first-child > div:last-child {
-  border-color: rgb(120 82 0 / 22%);
-  background: rgb(255 255 255 / 78%);
+body.legacy-route #about h3 {
+  color: #ffd966;
 }
 
-/* The image is supplied as the full-bleed background above, not as a cropped card. */
-#about > div > :last-child {
+body.legacy-route #about > div > :first-child > div:last-child {
+  border-color: rgb(245 180 0 / 30%);
+  background: rgb(245 180 0 / 5%);
+}
+
+body.legacy-route #about > div > :last-child {
   display: none;
 }
 
 @media (max-width: 767px) {
-  #about > div {
-    display: flex;
-    flex-direction: column;
-    aspect-ratio: auto;
-    background-image: none;
+  body.legacy-route #about {
+    padding: 5rem 1.25rem;
   }
 
-  #about > div > :first-child {
-    position: static;
-    order: 2;
-    width: 100%;
-    padding: 1.5rem 1.25rem;
-    text-align: right;
-    background: #fffaf1;
-  }
-
-  #about h2 {
-    font-size: 1.65rem;
-    line-height: 1.25;
-  }
-
-  #about p {
-    font-size: 0.95rem;
-    line-height: 1.55;
-  }
-
-  #about > div > :first-child > div:last-child {
-    margin-top: 1rem;
-    padding: 1rem;
-  }
-
-  #about > div > :last-child {
-    position: static;
+  body.legacy-route #about > div {
     display: block;
-    order: 1;
-    width: 100%;
-    height: auto;
-  }
-
-  #about img {
-    display: block;
-    width: 100%;
-    height: auto;
-    aspect-ratio: 1672 / 941;
-    border-radius: 0;
-    object-fit: contain;
-    box-shadow: none;
+    background: none;
   }
 }
 
