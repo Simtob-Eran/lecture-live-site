@@ -35,14 +35,84 @@ html {
   animation: cell-pop 0.45s ease-out forwards;
 }
 
-/* The original /old page: restore the text-only About section. */
+/* Full-bleed About section; preserve the photo's original proportions. */
+body:not(.legacy-route) #about {
+  position: relative;
+  left: 50%;
+  width: 100vw;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  transform: translateX(-50%);
+  background: #f7f1e7;
+}
+
+body:not(.legacy-route) #about > div {
+  position: relative;
+  display: block;
+  width: 100%;
+  max-width: none;
+  aspect-ratio: 1672 / 941;
+  padding: 0;
+}
+
+body:not(.legacy-route) #about > div > :first-child {
+  position: absolute;
+  z-index: 1;
+  inset-block: 0;
+  left: 4vw;
+  display: flex;
+  width: min(44vw, 650px);
+  flex-direction: column;
+  justify-content: center;
+  text-align: right;
+  color: #171717;
+}
+
+body:not(.legacy-route) #about h2,
+body:not(.legacy-route) #about p {
+  color: #171717;
+}
+
+body:not(.legacy-route) #about h3 {
+  color: #6a4700;
+}
+
+body:not(.legacy-route) #about > div > :first-child > div:last-child {
+  border-color: rgb(120 82 0 / 22%);
+  background: rgb(255 255 255 / 82%);
+}
+
+body:not(.legacy-route) #about > div > :last-child {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body:not(.legacy-route) #about img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: auto;
+  border-radius: 0;
+  object-fit: contain;
+  object-position: center;
+  box-shadow: none;
+}
+
+/* The original /old page stays text-only and does not inherit the full-bleed layout. */
 body.legacy-route #about {
   position: static;
+  left: auto;
   width: auto;
   max-width: 72rem;
   overflow: visible;
   margin-inline: auto;
   padding: 5rem 1.25rem;
+  transform: none;
   background: transparent;
   color: #e6eaf6;
 }
@@ -71,17 +141,9 @@ body.legacy-route #about > div > :first-child {
   background: transparent;
 }
 
-body.legacy-route #about h2 {
-  color: #e6eaf6;
-}
-
-body.legacy-route #about p {
-  color: #c7cfe6;
-}
-
-body.legacy-route #about h3 {
-  color: #ffd966;
-}
+body.legacy-route #about h2 { color: #e6eaf6; }
+body.legacy-route #about p { color: #c7cfe6; }
+body.legacy-route #about h3 { color: #ffd966; }
 
 body.legacy-route #about > div > :first-child > div:last-child {
   border-color: rgb(245 180 0 / 30%);
@@ -93,6 +155,48 @@ body.legacy-route #about > div > :last-child {
 }
 
 @media (max-width: 767px) {
+  body:not(.legacy-route) #about > div {
+    display: flex;
+    flex-direction: column;
+    aspect-ratio: auto;
+  }
+
+  body:not(.legacy-route) #about > div > :first-child {
+    position: static;
+    order: 2;
+    width: 100%;
+    padding: 1.5rem 1.25rem;
+    text-align: right;
+    background: #fffaf1;
+  }
+
+  body:not(.legacy-route) #about h2 {
+    font-size: 1.65rem;
+    line-height: 1.25;
+  }
+
+  body:not(.legacy-route) #about p {
+    font-size: 0.95rem;
+    line-height: 1.55;
+  }
+
+  body:not(.legacy-route) #about > div > :first-child > div:last-child {
+    margin-top: 1rem;
+    padding: 1rem;
+  }
+
+  body:not(.legacy-route) #about > div > :last-child {
+    position: relative;
+    order: 1;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1672 / 941;
+  }
+
+  body:not(.legacy-route) #about img {
+    height: 100%;
+  }
+
   body.legacy-route #about {
     padding: 5rem 1.25rem;
   }
